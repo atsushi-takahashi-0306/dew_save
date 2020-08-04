@@ -17,7 +17,18 @@
     <form action="{% url 'wine:add' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <table>
-            {{ form.as_table }}
+            <tr><th>date</th><td>{{form.date}}</td></tr>
+            <tr><th>name</th><td>{{form.name}}</td></tr>
+            <tr><th>sort</th><td>{{form.sort}}</td></tr>
+            <tr><th>country</th><td>{{form.country}}</td></tr>
+            <tr><th>vintage</th><td>{{form.vintage}}</td></tr>
+            <tr><th>grape</th><td>{{form.grape}}</td></tr>
+            <tr><th>eye</th><td>{{form.eye}}</td></tr>
+            <tr><th>nose</th><td>{{form.nose}}</td></tr>
+            <tr><th>mouth</th><td>{{form.mouth}}</td></tr>
+            <tr><th>memo</th><td>{{form.memo}}</td></tr>
+            <tr><th>point</th><td>{{form.point}}</td></tr>
+            <tr><th>pic</th><td>{{form.pic}}</td></tr>
             <tr><th></th><td><br><input type="submit" value="send"></td></tr>
         </table>
     </form>
