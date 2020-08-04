@@ -22,6 +22,7 @@ class Add_wine(LoginRequiredMixin,CreateView):
 class All_wine(LoginRequiredMixin,ListView):
     model = Wine
     template_name = 'wine/all_wine.html'
+    paginate_by = 5
 
 class Detail_wine(LoginRequiredMixin,DetailView):
     model = Wine
