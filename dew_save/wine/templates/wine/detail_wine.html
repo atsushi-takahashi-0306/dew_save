@@ -1,0 +1,53 @@
+{% extends 'wine/layout.html' %}
+
+{% block title %}Detail Wine{% endblock %}
+
+{% block main%}
+
+    <a href="{% url 'add' %}">add</a>
+    <a href="">logout</a>
+
+
+    <h1>Detail Wine</h1>
+
+    <form action="" methond="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <img src="{{object.pic.url}}" width="400">
+       <table>
+            <tr>
+                <th>name</th>
+                <th>sort</th>
+                <th>country</th>
+                <th>vintage</th>
+                <th>grape</th>
+                <th>eye</th>
+                <th>nose</th>
+                <th>mouth</th>
+                <th>date</th>
+                <th>memo</th>
+                <th>point</th>
+            </tr>
+            <tr>
+                <td>{{ object.name}}</td>
+                <td>{{ object.sort}}</td>
+                <td>{{ object.country}}</td>
+                <td>{{ object.vintage}}</td>
+                <td>{{ object.grape}}</td>
+                <td>{{ object.eye}}</td>
+                <td>{{ object.nose}}</td>
+                <td>{{ object.mouth}}</td>
+                <td>{{ object.date}}</td>
+                <td>{{ object.memo}}</td>
+                <td>{{ object.point}}</td>
+            </tr>
+        </table> 
+
+    </form>
+
+
+    <form action="/delete_wine/{{object.id}}/" method="post">
+        {% csrf_token %}
+        <input type="submit" value="delete">
+    </form>    
+
+{% endblock %}
