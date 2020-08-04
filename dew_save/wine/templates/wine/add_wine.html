@@ -6,7 +6,7 @@
 {% block main%}
 
     <a href="{% url 'wine:all' %}">wine list</a>
-    <a href="">logout</a>
+    <a href="{% url 'account:logout' %}">logout</a>
 
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
