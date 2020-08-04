@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.views.generic import ListView
 from django.views.generic import DetailView
+from django.views.generic import DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -25,3 +26,8 @@ class All_wine(LoginRequiredMixin,ListView):
 class Detail_wine(LoginRequiredMixin,DetailView):
     model = Wine
     template_name = 'wine/detail_wine.html'
+
+class Delete_wine(LoginRequiredMixin,DeleteView):
+    model = Wine
+    template_name = 'wine/detail_wine.html'
+    success_url = reverse_lazy('add')
