@@ -23,6 +23,7 @@ class All_wine(LoginRequiredMixin,ListView):
     model = Wine
     template_name = 'wine/all_wine.html'
     paginate_by = 5
+    queryset = Wine.objects.order_by('-id')
 
 class Detail_wine(LoginRequiredMixin,DetailView):
     model = Wine
