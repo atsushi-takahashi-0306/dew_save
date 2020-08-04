@@ -1,0 +1,43 @@
+{% extends 'wine/layout.html' %}
+
+{% block title %}All Wine{% endblock %}
+
+{% block main%}
+
+    <a href="">add</a>
+    <a href="">logout</a>
+
+
+    <h1>Wine List</h1>
+
+    <table>
+        <tr>
+            <th>user</th>
+            <th>wine name</th>
+            <th>sort</th>
+            <th>country</th>
+        </tr>
+
+
+        {% for item in object_list %}
+        <tr>
+            <td>{{item.user}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.sort}}</td>
+            <td>{{item.country}}</td>
+        {% if item.pic %}
+           <td><a href="/detail_wine/{{item.id}}/" ><img src='{{item.pic.url}}' width="78px"></a></td>
+        {% endif %}
+        </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}
+  
+
+   
+
+
+
+   

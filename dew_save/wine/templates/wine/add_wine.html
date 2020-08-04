@@ -1,0 +1,18 @@
+{% extends 'wine/layout.html' %}
+
+{% block title %}Add wine{% endblock %}
+
+
+{% block main%}
+
+    <a href="{% url 'all' %}">wine list</a>
+    <a href="">logout</a>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+            <tr><th></th><td><br><input type="submit" value="send"></td></tr>
+        </table>
+    </form>
+{% endblock %}

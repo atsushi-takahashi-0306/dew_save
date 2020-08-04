@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+
+
+/* header */
+
+.logo{
+    margin: 30px;
+    padding: 30px;
+    display: inline-block;
+    background-color: black;
+    color: white;
+}
+
+.dew{
+    color: #f59c42;
+}
+
+.save{
+    color: greenyellow;
+}
+

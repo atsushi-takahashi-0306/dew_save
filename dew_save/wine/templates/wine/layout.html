@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'wine/css/stylesheet.css' %}">
+</head>
+    <body>
+        <center>
+            <header>
+                <div class="logo">
+                    <span class="dew">dew</span>_<span class="save">save</span>();
+                </div>
+            </header>
+
+
+            <main>
+                {% block main%}{% endblock %}
+            </main>
+
+            <footer>
+                {% block page %}{% endblock %}
+            </footer>
+        </center>
+    </body>
+</html>
