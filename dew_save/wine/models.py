@@ -3,7 +3,8 @@ from django.core.validators import MaxLengthValidator
 from django.core.validators import MaxValueValidator
 from django.core.validators import MinValueValidator
 from django.core.validators import FileExtensionValidator
-import datetime
+from django.utils import timezone
+from django.contrib.auth import get_user_model
 
 
 
@@ -105,7 +106,8 @@ class Wine(models.Model):
         'ファイル形式はJPEG,PNG,GIFでお願い致します。'
     ]
 
-
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,default=1)
+    date = models.DateTimeField(default=timezone.now)
     name = models.CharField(verbose_name='Name', max_length=100,validators=[MaxLengthValidator(50,error_msg[0])])
     sort = models.CharField(verbose_name='Sort',choices=sort_data,max_length=100)
     country = models.CharField(verbose_name='Country', choices=country_data,max_length=100)
@@ -114,7 +116,6 @@ class Wine(models.Model):
     eye = models.CharField(verbose_name='Eye', choices=eye_data,max_length=100,blank=True)
     nose = models.CharField(verbose_name='Nose', choices=nose_data,max_length=100,blank=True)
     mouth = models.CharField(verbose_name='Mouth', choices=mouth_data,max_length=100,blank=True)
-    date= models.DateField(verbose_name='Date')
     memo = models.CharField(verbose_name='Memo', max_length=200, blank=True)
     point = models.FloatField(verbose_name='Point',validators=[MaxValueValidator(5,error_msg[2]),MinValueValidator(0,error_msg[3])])
     pic = models.ImageField(upload_to='images/',blank=True,validators=[FileExtensionValidator(['JPG','PNG','GIF'],error_msg[4])])

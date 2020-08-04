@@ -17,7 +17,7 @@ class Add_wine(LoginRequiredMixin,CreateView):
     model = Wine
     form_class = WineForm
     template_name = 'wine/add_wine.html'
-    success_url = reverse_lazy('add')
+    success_url = reverse_lazy('wine:add')
 
 class All_wine(LoginRequiredMixin,ListView):
     model = Wine
@@ -32,4 +32,4 @@ class Detail_wine(LoginRequiredMixin,DetailView):
 class Delete_wine(LoginRequiredMixin,DeleteView):
     model = Wine
     template_name = 'wine/detail_wine.html'
-    success_url = reverse_lazy('add')
+    success_url = reverse_lazy('wine:add')
