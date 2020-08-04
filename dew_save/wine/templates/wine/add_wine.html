@@ -8,6 +8,12 @@
     <a href="{% url 'wine:all' %}">wine list</a>
     <a href="{% url 'account:logout' %}">logout</a>
 
+    {% if user.is_authenticated %}
+        <p>{{ user.get_username }}でログイン中</p>
+    {% else %}
+        <p>ログインしていません</p>
+    {% endif %}
+
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <table>
