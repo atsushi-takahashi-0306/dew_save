@@ -1,0 +1,31 @@
+{% extends 'wine/layout.html' %}
+
+{% block title %}login{% endblock %}
+
+{% block main%}
+
+    {% if form.errors %}
+        <p>お名前とパスワードが一致しません。</p>
+        <p>もう一度お試し下さい。</p>
+    {% endif %}
+
+
+    <form method="post" action="{% url 'account:login' %}">
+        {% csrf_token %}
+            <table>
+                <tr>
+                    <td>User name</td>
+                    <td>{{ form.username }}</td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>{{ form.password }}</td>
+                </tr>
+            </table>
+            <input type="submit" value="login">
+    </form>
+
+    {# Assumes you setup the password_reset view in your URLconf #}
+    <p><a href="">Lost password?</a></p>
+
+{% endblock %}

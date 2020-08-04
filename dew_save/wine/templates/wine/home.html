@@ -3,7 +3,7 @@
 {% block title %}home{% endblock %}
 
 {% block main%}
-    <a href="{% url 'signup' %}">signup</a>
-    <a href="">login</a>
-    <a href="{% url 'add' %}">add</a>
+    <a href="{% url 'account:signup' %}">signup</a>
+    <a href="{% url 'account:login' %}">login</a>
+    <a href="{% url 'wine:add' %}">add</a>
 {% endblock %}

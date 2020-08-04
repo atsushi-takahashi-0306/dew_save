@@ -120,6 +120,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+LOGIN_URL=''
+LOGIN_REDIRECT_URL='wine:add'
+LOGOUT_REDIRECT_URL=''
