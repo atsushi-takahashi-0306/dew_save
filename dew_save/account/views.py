@@ -6,7 +6,7 @@ from .forms import SignUpForm
 from django.views.generic import DeleteView
 from django.views.generic import UpdateView
 from django.contrib.auth.models import User
-from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 
 
@@ -21,12 +21,12 @@ class SignUp(CreateView):
         self.object = user 
         return HttpResponseRedirect(self.get_success_url())
 
-class Delete_user(UserPassesTestMixin,DeleteView):
+class Delete_user(LoginRequiredMixin,DeleteView):
     model = User
     template_name = 'account/account.html'
     success_url = reverse_lazy('wine:home')
 
-class Update_user(UpdateView):
+class Update_user(LoginRequiredMixin,UpdateView):
     model = User
     form_class = SignUpForm
     template_name = 'account/account.html'
