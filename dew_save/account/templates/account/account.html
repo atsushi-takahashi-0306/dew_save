@@ -1,0 +1,34 @@
+{% extends 'wine/layout.html' %}
+
+{% block title %}account{% endblock %}
+
+
+{% block main%}
+
+<a href="{% url 'wine:all' %}">wine list</a>
+<a href="{% url 'account:logout' %}">logout</a>
+
+{% if user.is_authenticated %}
+    <p>{{ user.get_username }}でログイン中</p>
+{% else %}
+    <p>ログインしていません</p>
+{% endif %}
+
+
+<h1>Detail User</h1>
+
+<form action="/update_user/{{object.id}}/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <input type="submit" value="update">
+</form>
+
+
+<form action="/delete_user/{{object.id}}/" method="post">
+    {% csrf_token %}
+    <input type="submit" value="delete">
+</form>    
+
+{% endblock %}
