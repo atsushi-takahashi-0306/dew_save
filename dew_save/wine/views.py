@@ -44,4 +44,6 @@ class Update_wine(LoginRequiredMixin,UpdateView):
     model = Wine
     form_class = WineForm
     template_name = 'wine/detail_wine.html'
-    success_url = reverse_lazy('wine:add')
+    def get_success_url(self):
+        args=self.object.id
+        return reverse_lazy('wine:update', args=(self.object.id,))
