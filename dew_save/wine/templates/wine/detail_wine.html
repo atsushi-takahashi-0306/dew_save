@@ -15,39 +15,13 @@
 
 
     <h1>Detail Wine</h1>
-
-    <form action="" methond="post" enctype="multipart/form-data">
-    {% csrf_token %}
     <img src="{{object.pic.url}}" width="400">
-       <table>
-            <tr>
-                <th>date</th>
-                <th>name</th>
-                <th>sort</th>
-                <th>country</th>
-                <th>vintage</th>
-                <th>grape</th>
-                <th>eye</th>
-                <th>nose</th>
-                <th>mouth</th>
-                <th>memo</th>
-                <th>point</th>
-            </tr>
-            <tr>
-                <td>{{ object.date}}</td>
-                <td>{{ object.name}}</td>
-                <td>{{ object.sort}}</td>
-                <td>{{ object.country}}</td>
-                <td>{{ object.vintage}}</td>
-                <td>{{ object.grape}}</td>
-                <td>{{ object.eye}}</td>
-                <td>{{ object.nose}}</td>
-                <td>{{ object.mouth}}</td>
-                <td>{{ object.memo}}</td>
-                <td>{{ object.point}}</td>
-            </tr>
-        </table> 
-
+    <form action="/update_wine/{{object.id}}/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit" value="update">
     </form>
 
 
