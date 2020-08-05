@@ -7,11 +7,17 @@ from django.views.generic import ListView
 from django.views.generic import DetailView
 from django.views.generic import DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import redirect
+
 
 
 
 def home(request):
-    return render(request, 'wine/home.html')
+    if request.user.is_authenticated:
+        return redirect('wine:add')
+    else:
+        return render(request, 'wine/home.html')
+
 
 class Add_wine(LoginRequiredMixin,CreateView):
     model = Wine
