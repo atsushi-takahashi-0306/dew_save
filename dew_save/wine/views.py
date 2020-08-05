@@ -18,6 +18,9 @@ class Add_wine(LoginRequiredMixin,CreateView):
     form_class = WineForm
     template_name = 'wine/add_wine.html'
     success_url = reverse_lazy('wine:add')
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(Add_wine, self).form_valid(form)
 
 class All_wine(LoginRequiredMixin,ListView):
     model = Wine
