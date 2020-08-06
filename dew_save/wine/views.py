@@ -7,7 +7,7 @@ from django.views.generic import ListView
 from django.views.generic import DetailView
 from django.views.generic import DeleteView
 from django.views.generic import UpdateView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
 from django.shortcuts import redirect
 
 
@@ -19,6 +19,11 @@ def home(request):
     else:
         return render(request, 'wine/home.html')
 
+class OnlyYouMixin(UserPassesTestMixin):
+    raise_exception = True
+    def test_func(self):
+        user = self.request.user
+        return user.pk == self.kwargs['pk'] or user.is_superuser
 
 class My_wine(LoginRequiredMixin,ListView):
     model = Wine
@@ -26,7 +31,6 @@ class My_wine(LoginRequiredMixin,ListView):
     paginate_by = 5
     def get_queryset(self):
         return Wine.objects.filter(user=self.request.user)
-
 
 class Add_wine(LoginRequiredMixin,CreateView):
     model = Wine
@@ -48,12 +52,12 @@ class Detail_wine(LoginRequiredMixin,DetailView):
     form_class = WineForm
     template_name = 'wine/detail_wine.html'
 
-class Delete_wine(LoginRequiredMixin,DeleteView):
+class Delete_wine(LoginRequiredMixin,OnlyYouMixin,DeleteView):
     model = Wine
     template_name = 'wine/update_wine.html'
     success_url = reverse_lazy('wine:add')
 
-class Update_wine(LoginRequiredMixin,UpdateView):
+class Update_wine(LoginRequiredMixin,OnlyYouMixin,UpdateView):
     model = Wine
     form_class = WineForm
     template_name = 'wine/update_wine.html'
