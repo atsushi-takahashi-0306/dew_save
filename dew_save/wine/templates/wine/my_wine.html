@@ -3,11 +3,11 @@
 {% block title %}My Wine{% endblock %}
 
 {% block main%}
-    <a href="{% url 'wine:all' %}">wine posts</a>
-    <a href="{% url 'wine:my' %}">my wine</a>
-    <a href="{% url 'wine:add' %}">add  〇</a>
-    <a href="/update_user/{{user.id}}/">account</a>
-    <a href="{% url 'account:logout' %}">logout</a>
+    <a href="{% url 'wine:all' %}">〇wine posts</a>
+    <a href="{% url 'wine:my' %}">〇my wine</a>
+    <a href="{% url 'wine:add' %}">〇add</a>
+    <a href="/update_user/{{user.id}}/">〇account</a>
+    <a href="{% url 'account:logout' %}">〇logout</a>
 
 
     {% if user.is_authenticated %}

@@ -5,8 +5,11 @@
 
 {% block main%}
 
-<a href="{% url 'wine:all' %}">wine list</a>
-<a href="{% url 'account:logout' %}">logout</a>
+    <a href="{% url 'wine:all' %}">〇wine posts</a>
+    <a href="{% url 'wine:my' %}">〇my wine</a>
+    <a href="{% url 'wine:add' %}">〇add</a>
+    <a href="/update_user/{{user.id}}/">〇account</a>
+    <a href="{% url 'account:logout' %}">〇logout</a>
 
 {% if user.is_authenticated %}
     <p>{{ user.get_username }}でログイン中</p>
@@ -15,7 +18,7 @@
 {% endif %}
 
 
-<h1>Detail User</h1>
+<h1>User account</h1>
 
 <form action="/update_user/{{object.id}}/" method="post" enctype="multipart/form-data">
     {% csrf_token %}
