@@ -127,4 +127,11 @@ MEDIA_URL = '/media/'
 
 LOGIN_URL='wine:home'
 LOGIN_REDIRECT_URL='wine:all'
-LOGOUT_REDIRECT_URL='wine:home'
+LOGOUT_REDIRECT_URL = 'wine:home'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ramona.at@gmail.com'
+EMAIL_HOST_PASSWORD = '03060313'
+EMAIL_PORT = '587'
