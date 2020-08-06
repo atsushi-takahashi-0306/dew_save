@@ -52,12 +52,12 @@ class Detail_wine(LoginRequiredMixin,DetailView):
     form_class = WineForm
     template_name = 'wine/detail_wine.html'
 
-class Delete_wine(LoginRequiredMixin,OnlyYouMixin,DeleteView):
+class Delete_wine(LoginRequiredMixin,DeleteView):
     model = Wine
     template_name = 'wine/update_wine.html'
     success_url = reverse_lazy('wine:add')
 
-class Update_wine(LoginRequiredMixin,OnlyYouMixin,UpdateView):
+class Update_wine(LoginRequiredMixin,UpdateView):
     model = Wine
     form_class = WineForm
     template_name = 'wine/update_wine.html'

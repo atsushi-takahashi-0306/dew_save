@@ -52,6 +52,8 @@ class SignUp(CreateView):
         login(self.request, user)
         self.object = user 
         return HttpResponseRedirect(self.get_success_url())
+    
+    
 
 class Delete_user(OnlyYouMixin,DeleteView):
     model = User
