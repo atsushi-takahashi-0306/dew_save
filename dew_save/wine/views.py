@@ -15,7 +15,7 @@ from django.shortcuts import redirect
 
 def home(request):
     if request.user.is_authenticated:
-        return redirect('wine:add')
+        return redirect('wine:all')
     else:
         return render(request, 'wine/home.html')
 
