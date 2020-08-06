@@ -6,6 +6,8 @@
 
     <a href="{% url 'wine:add' %}">add</a>
     <a href="{% url 'account:logout' %}">logout</a>
+    <a href="/update_user/{{user.id}}/">account</a>
+
 
     {% if user.is_authenticated %}
         <p>{{ user.get_username }}でログイン中</p>

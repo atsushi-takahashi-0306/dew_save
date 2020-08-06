@@ -6,8 +6,15 @@ from .forms import SignUpForm
 from django.views.generic import DeleteView
 from django.views.generic import UpdateView
 from django.contrib.auth.models import User
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
 from django.shortcuts import redirect
+
+class OnlyYouMixin(UserPassesTestMixin):
+    raise_exception = True
+
+    def test_func(self):
+        user = self.request.user
+        return user.pk == self.kwargs['pk'] or user.is_superuser
 
 
 class SignUp(CreateView):
@@ -21,15 +28,15 @@ class SignUp(CreateView):
         self.object = user 
         return HttpResponseRedirect(self.get_success_url())
 
-class Delete_user(LoginRequiredMixin,DeleteView):
+class Delete_user(OnlyYouMixin,DeleteView):
     model = User
     template_name = 'account/account.html'
     success_url = reverse_lazy('wine:home')
 
-class Update_user(LoginRequiredMixin,UpdateView):
+class Update_user(OnlyYouMixin,UpdateView):
     model = User
     form_class = SignUpForm
     template_name = 'account/account.html'
     def get_success_url(self):
         args=self.object.id
-        return reverse_lazy('account:update', args=(self.object.id,))
+        return reverse_lazy('account:login')
