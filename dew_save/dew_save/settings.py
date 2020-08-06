@@ -126,5 +126,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 LOGIN_URL='wine:home'
-LOGIN_REDIRECT_URL='wine:add'
+LOGIN_REDIRECT_URL='wine:all'
 LOGOUT_REDIRECT_URL='wine:home'
