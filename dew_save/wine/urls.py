@@ -1,5 +1,6 @@
 from django.urls import path
 from .import views
+from .views import My_wine
 from .views import Add_wine
 from .views import All_wine
 from .views import Delete_wine
@@ -14,6 +15,7 @@ app_name = 'wine'
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('my_wine/', My_wine.as_view(), name='my'),
     path('add_wine/', Add_wine.as_view(), name='add'),
     path('all_wine/', All_wine.as_view(), name='all'),
     path('delete_wine/<int:pk>/', Delete_wine.as_view(), name='delete'),

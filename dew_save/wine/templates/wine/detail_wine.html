@@ -4,9 +4,11 @@
 
 {% block main%}
 
-    <a href="{% url 'wine:add' %}">add</a>
-    <a href="{% url 'account:logout' %}">logout</a>
-    <a href="/update_user/{{user.id}}/">account</a>
+<a href="{% url 'wine:all' %}">wine posts</a>
+<a href="{% url 'wine:add' %}">add</a>
+<a href="{% url 'wine:my' %}">my wine  〇</a>
+<a href="/update_user/{{user.id}}/">account</a>
+<a href="{% url 'account:logout' %}">logout</a>
 
 
     {% if user.is_authenticated %}

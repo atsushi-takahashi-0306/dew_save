@@ -19,6 +19,14 @@ def home(request):
         return render(request, 'wine/home.html')
 
 
+class My_wine(LoginRequiredMixin,ListView):
+    model = Wine
+    template_name = 'wine/my_wine.html'
+    paginate_by = 5
+    def get_queryset(self):
+        return Wine.objects.filter(user=self.request.user)
+
+
 class Add_wine(LoginRequiredMixin,CreateView):
     model = Wine
     form_class = WineForm
