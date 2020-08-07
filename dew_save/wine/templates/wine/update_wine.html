@@ -4,13 +4,6 @@
 
 {% block main%}
 
-    {% if user.is_authenticated %}
-        <p>{{ user.get_username }}でログイン中</p>
-    {% else %}
-        <p>ログインしていません</p>
-    {% endif %}
-
-
     <h1>Detail Wine</h1>
     <img src="{{object.pic.url}}" width="400">
     <form action="/update_wine/{{object.id}}/" method="post" enctype="multipart/form-data">

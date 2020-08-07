@@ -26,10 +26,15 @@
 
             <div class="content">
                 <nav>
+                    {% if user.is_authenticated %}
+                        <p class="user_name">{{ user.get_username }}</p>
+                    {% else %}
+                        <p>ログインしていません</p>
+                    {% endif %}
                     <ul>
-                        <li><a href="{% url 'wine:all' %}">wine posts</a></li>
+                        <li><a href="{% url 'wine:all' %}">new posts</a></li>
                         <li><a href="{% url 'wine:my' %}">my wine</a></li>
-                        <li><a href="{% url 'wine:add' %}">add</a></li>
+                        <li><a href="{% url 'wine:add' %}">add posts</a></li>
                         <li><a href="/update_user/{{user.id}}/">account</a></li>
                         <li><a href="{% url 'account:logout' %}">logout</a></li>
                     </ul>
@@ -41,7 +46,8 @@
             </div>
 
             <footer>
-                {% block page %}{% endblock %}
+                <hr>
+                <p class="copy_right">&copy;  2020  dew_save();</p>
             </footer>
     
     </body>

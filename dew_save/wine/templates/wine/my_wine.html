@@ -2,15 +2,8 @@
 
 {% block title %}My Wine{% endblock %}
 
-{% block main%}
-
-    {% if user.is_authenticated %}
-        <p>{{ user.get_username }}でログイン中</p>
-    {% else %}
-        <p>ログインしていません</p>
-    {% endif %}
     
-
+{% block main%}
     <h1>My wine</h1>
 
     <table>

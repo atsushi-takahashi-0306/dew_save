@@ -7,13 +7,6 @@
 
 {% block main%}
 
-
-    {% if user.is_authenticated %}
-        <p>{{ user.get_username }}でログイン中</p>
-    {% else %}
-        <p>ログインしていません</p>
-    {% endif %}
-
  
     <div class="wrapper">
         <img src="{{object.pic.url}}" width="400">

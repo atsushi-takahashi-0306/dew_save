@@ -6,13 +6,6 @@
 {% block main%}
 
 
-{% if user.is_authenticated %}
-    <p>{{ user.get_username }}でログイン中</p>
-{% else %}
-    <p>ログインしていません</p>
-{% endif %}
-
-
 <h1>User account</h1>
 
 <form action="/update_user/{{object.id}}/" method="post" enctype="multipart/form-data">
