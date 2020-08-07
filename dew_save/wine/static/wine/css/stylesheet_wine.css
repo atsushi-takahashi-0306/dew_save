@@ -65,10 +65,49 @@ nav a:hover{
     color: red;
 }
 
+/* main */
+
+/* all_wine */
+
+.main_title{
+    font-size: 24px;
+    text-align: center;
+}
+
+.grid{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.item img{
+    width: auto;
+    max-height: 265px;
+}
+
+.item_date_time{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.item_user_name{
+    margin-top: 0;
+}
+
+center{
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+
+
+
 /* footer */
 .copy_right{
     font-size: 12px;
     text-align: right;
+    margin-top: 15px;
 }
 
 
