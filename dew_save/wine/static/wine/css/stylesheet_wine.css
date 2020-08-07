@@ -1,5 +1,25 @@
 @charset "utf-8";
 
+body{
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.content{
+    display: flex;
+}
+
+nav{
+    width: 30%;
+}
+
+main{
+    width: 70%;
+}
+
+
+
+
 
 
 /* header */
@@ -19,4 +39,3 @@
 .save{
     color: greenyellow;
 }
-

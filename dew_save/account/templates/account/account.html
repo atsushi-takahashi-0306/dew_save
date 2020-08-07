@@ -5,11 +5,6 @@
 
 {% block main%}
 
-    <a href="{% url 'wine:all' %}">〇wine posts</a>
-    <a href="{% url 'wine:my' %}">〇my wine</a>
-    <a href="{% url 'wine:add' %}">〇add</a>
-    <a href="/update_user/{{user.id}}/">〇account</a>
-    <a href="{% url 'account:logout' %}">〇logout</a>
 
 {% if user.is_authenticated %}
     <p>{{ user.get_username }}でログイン中</p>

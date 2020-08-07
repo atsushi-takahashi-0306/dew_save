@@ -1,30 +1,49 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'wine/css/sanitize.css' %}">
+    <link rel="stylesheet" href="{% static 'wine/css/stylesheet_wine.css' %}">
+    <link rel="stylesheet" href="{% static 'wine/css/stylesheet_account.css' %}">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <link rel="stylesheet" href="{% static 'wine/css/stylesheet.css' %}">
     <script type="text/javascript" src="{% static 'wine/js/continual_submit.js' %}"></script>
 </head>
+
+
     <body>
-        <center>
+    
             <header>
                 <div class="logo">
                     <span class="dew">dew</span>_<span class="save">save</span>();
                 </div>
+                <hr>
             </header>
 
 
-            <main>
-                {% block main%}{% endblock %}
-            </main>
+            <div class="content">
+                <nav>
+                    <ul>
+                        <li><a href="{% url 'wine:all' %}">wine posts</a></li>
+                        <li><a href="{% url 'wine:my' %}">my wine</a></li>
+                        <li><a href="{% url 'wine:add' %}">add</a></li>
+                        <li><a href="/update_user/{{user.id}}/">account</a></li>
+                        <li><a href="{% url 'account:logout' %}">logout</a></li>
+                    </ul>
+                </nav>
+
+                <main>
+                    {% block main%}{% endblock %}               
+                </main>
+            </div>
 
             <footer>
                 {% block page %}{% endblock %}
             </footer>
-        </center>
+    
     </body>
+
 </html>
