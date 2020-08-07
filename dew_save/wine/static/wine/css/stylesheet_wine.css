@@ -1,12 +1,14 @@
 @charset "utf-8";
 
+/* common */
 a{
     text-decoration: none;
 }
+
 /* レイアウト */
 
 body{
-    max-width: 1150px;
+    max-width: 1110px;
     margin: 0 auto;
 }
 
@@ -21,7 +23,6 @@ nav{
 main{
     width: 70%;
 }
-
 
 /* header */
 
@@ -44,7 +45,7 @@ main{
 /* nav */
 
 .user_name{
-    color: blue;
+    color: red;
     font-size: 18px;
     font-weight: bold;
 }
@@ -63,7 +64,6 @@ nav a{
 nav a:hover{
     color: red;
 }
-
 
 /* footer */
 .copy_right{
