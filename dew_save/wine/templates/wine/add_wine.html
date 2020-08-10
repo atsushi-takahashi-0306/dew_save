@@ -7,9 +7,9 @@
 
 {% block main%}
 
-    <h1>Add wine</h1>
+<p class="main_title">add wine</p>
 
-
+<center>
     <form action="{% url 'wine:add' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <table>
@@ -28,4 +28,5 @@
             <tr><th></th><td><br><input type="submit" value="send"></td></tr>
         </table>
     </form>
+</center>
 {% endblock %}
