@@ -5,7 +5,7 @@
 {% block main%}
     <p class="main_title">new posts</p>
 
-    <div class="wrapper grid">
+    <div class="grid">
         {% for item in object_list %}
                 <div class="item">
                     <a href="/detail_wine/{{item.id}}/" ><img src='{{item.pic.url}}'></a>

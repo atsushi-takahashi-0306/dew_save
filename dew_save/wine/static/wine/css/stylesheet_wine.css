@@ -65,13 +65,16 @@ nav a:hover{
     color: red;
 }
 
-/* main */
-
 /* all_wine */
 
 .main_title{
     font-size: 24px;
     text-align: center;
+}
+
+.item_date_time{
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .grid{
@@ -89,13 +92,13 @@ nav a:hover{
 .item:hover img{
     opacity: 0.7;
     transition-duration: 0.3s;
-    box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+    box-shadow: 8px 8px 8px rgba(0,0,0,0.5);
     transform: translateY(-5px);
     transition-duration: 0.5s;
   }
 
 .item_date_time{
-    margin-top: 0;
+    margin-top: 3.5px;
     margin-bottom: 0;
 }
 
@@ -108,7 +111,7 @@ center{
     margin-bottom: 20px;
 }
 
-/* detail_wine */
+/* detail_wine */ 
 .detail_wrapper{
     display: flex;
 }
@@ -119,6 +122,11 @@ center{
 }
 .detail_wine_table input{
     margin-top: 50px;
+}
+/* my_wine */
+.item_date_time2{
+    margin-top: 3.5px;
+    margin-bottom: 16px;
 }
 
 

@@ -4,45 +4,34 @@
 
     
 {% block main%}
-    <h1>My wine</h1>
+    <p class="main_title">my wine</p>
 
     <table>
-        <tr>
-            <th>user</th>
-            <th>wine name</th>
-            <th>sort</th>
-            <th>country</th>
-        </tr>
-
-        {% for item in object_list %}
-        <tr>
-            <td>{{item.user}}</td>
-            <td>{{item.name}}</td>
-            <td>{{item.sort}}</td>
-            <td>{{item.country}}</td>
-        {% if item.pic %}
-           <td><a href="/update_wine/{{item.id}}/" ><img src='{{item.pic.url}}' width="78px"></a></td>
-        {% endif %}
-        </tr>
-        {% endfor %}
-
+        <div class="grid">
+            {% for item in object_list %}
+                    <div class="item">
+                        <a href="/detail_wine/{{item.id}}/" ><img src='{{item.pic.url}}'></a>
+                        <p class="item_date_time2">{{item.date}}</p>
+                    </div>
+            {% endfor %}
+        </div>
     </table>
 
-
-    {% if page_obj.has_previous %}
-        <a href="?page={{ page_obj.previous_page_number }}">前へ</a>
-    {% endif %}
-
-    {% for num in page_obj.paginator.page_range %}
-        {% if page_obj.number == num %}
-            <span>{{ num }}</span>
-        {% else %}
-            <a href="?page={{ num }}">{{ num }}</a>
+    <center>
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">前へ</a>
         {% endif %}
-    {% endfor %}
 
-    {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">次へ</a>
-    {% endif %}
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+                <span>{{ num }}</span>
+            {% else %}
+                <a href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
 
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">次へ</a>
+        {% endif %}
+    </center>
 {% endblock %}
