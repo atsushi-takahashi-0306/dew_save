@@ -1,8 +1,9 @@
-{% extends 'wine/layout.html' %}
+{% extends 'wine/layout2.html' %}
 
-{% block title %}login{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block main%}
+    <p class="main_title">login</p>
 
     {% if form.errors %}
         <p>お名前とパスワードが一致しません。</p>
@@ -26,6 +27,6 @@
     </form>
 
     {# Assumes you setup the password_reset view in your URLconf #}
-    <p><a href="{% url 'account:password_reset' %}">Lost password?</a></p>
+    <p class="space3"><a class="lost_password_button" href="{% url 'account:password_reset' %}">Lost password?</a></p>
 
 {% endblock %}
