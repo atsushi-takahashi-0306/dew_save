@@ -141,11 +141,12 @@ center{
 }
 
 .update_button{
-   
+    margin-top: 7px;
+    margin-right:150px
 }
 
 .delete_button{
-
+margin-left: 700px;
 
 }
 
