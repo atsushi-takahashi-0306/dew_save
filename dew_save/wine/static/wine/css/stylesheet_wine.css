@@ -146,6 +146,9 @@ center{
     margin-top: 25px;
     margin-bottom: 20px;
 }
+.pagination:hover{
+    color: red;
+}
 
 /* detail_wine */ 
 .detail_wrapper{
