@@ -1,25 +1,26 @@
 {% extends 'wine/layout.html' %}
 
-{% block title %}account{% endblock %}
+{% block title %}Account{% endblock %}
 
 
 {% block main%}
 
 
-<h1>User account</h1>
+<p class="main_title">user account</p>
 
-<form action="/update_user/{{object.id}}/" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <table>
-        {{form.as_table}}
-    </table>
-    <input type="submit" value="update">
-</form>
+<center>
+    <form action="/update_user/{{object.id}}/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <input class="account_update_button" type="submit" value="update">
+    </form>
 
-
-<form action="/delete_user/{{object.id}}/" method="post">
-    {% csrf_token %}
-    <input type="submit" value="delete">
-</form>    
+    <form action="/delete_user/{{object.id}}/" method="post">
+        {% csrf_token %}
+        <input class="account_delete_button" type="submit" value="delete">
+    </form>    
+</center>
 
 {% endblock %}
