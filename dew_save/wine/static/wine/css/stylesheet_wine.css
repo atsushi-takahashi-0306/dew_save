@@ -3,6 +3,7 @@
 /* common */
 a{
     text-decoration: none;
+    color: black;
 }
 
 /* レイアウト */
@@ -65,6 +66,26 @@ nav a{
 }
 
 nav a:hover{
+    color: red;
+}
+
+/* home */
+.space{
+    height:400px;
+}
+
+.signup_button{
+    font-size: 40px;
+}
+
+.login_button{
+    font-size: 40px;
+}
+
+.signup_button:hover{
+    color: red;
+}
+.login_button:hover{
     color: red;
 }
 

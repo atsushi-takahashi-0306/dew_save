@@ -1,8 +1,13 @@
-{% extends 'wine/layout.html' %}
+{% extends 'wine/layout2.html' %}
 
-{% block title %}home{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block main%}
-    <a href="{% url 'account:signup' %}">signup</a>
-    <a href="{% url 'account:login' %}">login</a>
-{% endblock %}
+    <main>
+        <a class="signup_button" href="{% url 'account:signup' %}">signup  </a>
+        <a class="login_button" href="{% url 'account:login' %}">  login</a>
+        <div class="space"></div>
+    </main>
+{% endblock %} 
+           
+
