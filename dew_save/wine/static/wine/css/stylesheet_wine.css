@@ -114,11 +114,12 @@ center{
 }
 
 .detail_wine_table{
-    margin-top: 70px;
-    margin-left: 50px;
+    margin-top: 153px;
+    margin-left: 45px;
 }
-
-
+.detail_wine_table input{
+    margin-top: 50px;
+}
 
 
 /* footer */
