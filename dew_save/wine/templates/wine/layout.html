@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'wine/css/stylesheet_account.css' %}">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="{% static 'wine/js/continual_submit.js' %}"></script>
+    <script type="text/javascript" src="{% static 'wine/js/redoutline.js' %}"></script>
 </head>
 
 
@@ -32,11 +33,11 @@
                         <p>ログインしていません</p>
                     {% endif %}
                     <ul>
-                        <li><a href="{% url 'wine:all' %}">new posts</a></li>
-                        <li><a href="{% url 'wine:my' %}">my wine</a></li>
-                        <li><a href="{% url 'wine:add' %}">add posts</a></li>
-                        <li><a href="/update_user/{{user.id}}/">account</a></li>
-                        <li><a href="{% url 'account:logout' %}">logout</a></li>
+                        <li><a class="nav_list1" href="{% url 'wine:all' %}">new posts</a></li>
+                        <li><a class="nav_list2" href="{% url 'wine:my' %}">my wine</a></li>
+                        <li><a class="nav_list3" href="{% url 'wine:add' %}">add posts</a></li>
+                        <li><a class="nav_list4" href="/update_user/{{user.id}}/">account</a></li>
+                        <li><a class="nav_list5"href="{% url 'account:logout' %}">logout</a></li>
                     </ul>
                 </nav>
 

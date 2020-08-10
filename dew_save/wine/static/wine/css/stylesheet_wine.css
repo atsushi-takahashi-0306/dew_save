@@ -86,6 +86,14 @@ nav a:hover{
     max-height: 265px;
 }
 
+.item:hover img{
+    opacity: 0.7;
+    transition-duration: 0.3s;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+    transform: translateY(-5px);
+    transition-duration: 0.5s;
+  }
+
 .item_date_time{
     margin-top: 0;
     margin-bottom: 0;
