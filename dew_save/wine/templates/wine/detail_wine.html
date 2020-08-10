@@ -8,10 +8,10 @@
 {% block main%}
 
  
-    <div class="wrapper">
+    <div class="detail_wrapper">
         <img src="{{object.pic.url}}" width="400">
 
-        <table>
+        <table class="detail_wine_table">
             <tr><th>date</th><td>{{object.date}}</td></tr>
             <tr><th>user</th><td>{{object.user}}</td></tr>
             <tr><th>name</th><td>{{object.name}}</td></tr>
@@ -26,4 +26,5 @@
             <tr><th>point</th><td>{{object.point}}</td></tr>
         </table>
     </div>
+
 {% endblock %}
