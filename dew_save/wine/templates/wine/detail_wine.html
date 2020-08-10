@@ -6,10 +6,12 @@
 
 
 {% block main%}
+    <p class="main_title">detail wine</p>
+
 
  
     <div class="detail_wrapper">
-        <img src="{{object.pic.url}}" width="400">
+        <img src="{{object.pic.url}}" width="317px">
 
         <table class="detail_wine_table">
             <tr><th>date</th><td>{{object.date}}</td></tr>
@@ -25,7 +27,6 @@
             <tr><th>memo</th><td>{{object.memo}}</td></tr>
             <tr><th>point</th><td>{{object.point}}</td></tr>
             <tr><th></th><td><a href="{% url 'wine:all' %}"><input  class="back" type="submit" value="back"></a></td></tr>
-         
         </table>
     </div>
     

@@ -8,7 +8,7 @@ a{
 /* レイアウト */
 
 body{
-    max-width: 1110px;
+    max-width: 1115px;
     margin: 0 auto;
 }
 
@@ -17,11 +17,11 @@ body{
 }
 
 nav{
-    width: 30%;
+    width: 27%;
 }
 
 main{
-    width: 70%;
+    width: 76%;
 }
 
 /* header */
@@ -40,6 +40,9 @@ main{
 
 .save{
     color: greenyellow;
+}
+.white{
+    color: white;
 }
 
 /* nav */
@@ -117,18 +120,34 @@ center{
 }
 
 .detail_wine_table{
-    margin-top: 153px;
-    margin-left: 45px;
+    margin-top: 55px;
+    margin-left: 46px;
 }
+
 .detail_wine_table input{
-    margin-top: 50px;
+    margin-top: 10px;
 }
+
 /* my_wine */
 .item_date_time2{
     margin-top: 3.5px;
     margin-bottom: 16px;
 }
 
+/* update_wine */
+.update_wine_table{
+    margin-top: 30px;
+    margin-left: 46px;
+}
+
+.update_button{
+   
+}
+
+.delete_button{
+
+
+}
 
 /* footer */
 .copy_right{
