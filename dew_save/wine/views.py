@@ -13,6 +13,8 @@ from django.shortcuts import redirect
 
 
 
+
+
 def home(request):
     if request.user.is_authenticated:
         return redirect('wine:all')
@@ -21,6 +23,7 @@ def home(request):
 
 class OnlyYouMixin(UserPassesTestMixin):
     raise_exception = True
+
     def test_func(self):
         user = self.request.user
         return user.pk == self.kwargs['pk'] or user.is_superuser
