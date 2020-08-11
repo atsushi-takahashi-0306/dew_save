@@ -116,7 +116,7 @@ class Wine(models.Model):
     eye = models.CharField(verbose_name='Eye', choices=eye_data,max_length=100,blank=True)
     nose = models.CharField(verbose_name='Nose', choices=nose_data,max_length=100,blank=True)
     mouth = models.CharField(verbose_name='Mouth', choices=mouth_data,max_length=100,blank=True)
-    memo = models.CharField(verbose_name='Memo', max_length=200, blank=True)
+    memo = models.CharField(verbose_name='Memo', max_length=30, blank=True)
     point = models.FloatField(verbose_name='Point',validators=[MaxValueValidator(5,error_msg[2]),MinValueValidator(0,error_msg[3])])
     pic = models.ImageField(upload_to='images/',blank=True,validators=[FileExtensionValidator(['JPG','PNG','GIF'],error_msg[4])])
 
