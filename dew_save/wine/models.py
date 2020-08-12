@@ -14,8 +14,9 @@ from django.contrib.auth import get_user_model
 class Wine(models.Model):
 
     sort_data = [
-        ('red', 'red'),
         ('white', 'white'),
+        ('red', 'red'),
+        ('Rose','rose'),
         ('sparkling', 'sparkling'),
     ]
     
@@ -25,7 +26,7 @@ class Wine(models.Model):
         ('Italy','Italy'),
         ('Germany', 'Germany'),
         ('Spain', 'Spain'),
-        ('Portugal', 'Portugal'),
+        ('Portugal', 'Portugal'), 
         ('USA', 'USA'),
         ('Australia', 'Australia'),
         ('New Zealand', 'New Zealand'),
@@ -53,16 +54,23 @@ class Wine(models.Model):
         ('Gewürztraminer', 'Gewürztraminer'),
         ('Semillon', 'Semillon'),
         ('Viognier', 'Viognier'),
-        ('Pino Blanc', 'Pino Blanc'),
         ('Muscadet', 'Muscadet'),
         ('Pino gris', 'Pino gris'),
-        ('Cortese', 'Cortese'),
         ('Trebbiano', 'Trebbiano'),
-        ('Garganega', 'Garganega'),
-        ('Malvasia', 'Malvasia'),
         ('Chenin Blanc', 'Chenin Blanc'),
-        ('Albariño', 'Albariño'),
         ('甲州', '甲州'),
+        ('Cabernet Sauvignon', 'Cabernet Sauvignon'),
+        ('Pinot Noir','Pinot Noir'),
+        ('Merlot', 'Merlot'),
+        ('syrah', 'syrah'),
+        ('Gamay','Gamay'),
+        ('Sangiovese','Sangiovese'),
+        ('Montepulciano','Montepulciano'),
+        ('Nebbiolo','Nebbiolo'),
+        ('Primitivo','Primitivo'),
+        ('Zinfandel','Zinfandel'),
+        ('Tempranillo','Tempranillo'),
+        ('Malbec','Malbec'),
         ('etc.', 'etc.'),
     ]
 
@@ -72,15 +80,24 @@ class Wine(models.Model):
         ('yellow', 'yellow'),
         ('gold', 'gold'),
         ('amber', 'amber'),
+        ('purple','purple'),
+        ('ruby','ruby'),
+        ('orange','orange'),
+        ('garnet', 'garnet'),
+        ('brick', 'brick'),
+        ('mahogany', 'mahogany'),   
     ]
 
     nose_data = [
         ('lemmon', 'レモン'), ('kime', 'ライム'), ('grapefruit', 'グレープフルーツ'), ('apple', 'リンゴ'), ('green apple', '青りんご'),
         ('pear', '洋ナシ'), ('peach', '桃'), ('apricot', 'アプリコット'), ('pineapple', 'パイナップル'), ('passion fruit', 'パッションフルーツ'),
-        ('banana', 'バナナ'), ('mango', 'マンゴー'), ('lychee', 'ライチ'), ('muscat', 'マスカット'), ('water melon', 'メロン'),
-        ('kinmokusei', 'キンモクセイ'), ('mint', 'ミント'), ('rose', 'バラ'), ('floral', 'お花のような'), ('herb', 'ハーブの'), ('perfume', '香水'),
+        ('banana', 'バナナ'), ('mango', 'マンゴー'), ('lychee', 'ライチ'), ('muscat', 'マスカット'), ('strawberry', 'イチゴ'), ('raspberry', 'ラズベリー'),
+        ('blueberry', 'ブルーベリー'), ('cassis', 'カシス'), ('blackberry', 'ブラックベリー'), ('dry plum', '干しプラム'), ('dry fig', '乾燥イチジク'),
+        ('violet','すみれ'),('rose', 'バラ'),
+        ('kinmokusei', 'キンモクセイ'),('floral', 'お花のような'),('perfume', '香水'),('mint', 'ミント'),('herb', 'ハーブの'),('cedar', '杉'),
         ('barrel incense', '樽香'), ('toast', 'トースト'), ('butter', 'バター'), ('vanila', 'バニラ'), ('sulfur', '硫黄'), ('honey', 'はちみつ'),
-        ('cinnamon', 'シナモン'),('mineral', 'ミネラル'),
+        ('cinnamon', 'シナモン'), ('mineral', 'ミネラル'), ('soil', '土'), ('truffle', 'トリュフ'), ('cigarette', 'タバコ'), ('black pepper', '黒コショウ'),
+        ('blood','血液'),
     ]
 
     mouth_data = [
