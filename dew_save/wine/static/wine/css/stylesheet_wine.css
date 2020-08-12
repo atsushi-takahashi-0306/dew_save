@@ -11,6 +11,7 @@ a{
 body{
     max-width: 1115px;
     margin: 0 auto;
+    font-family: "verdana"
 }
 
 .content{
@@ -33,6 +34,8 @@ main{
     display: inline-block;
     background-color: black;
     color: white;
+    font-size: 16px;
+    font-family: "Ricty Diminished";
 }
 
 .dew{
@@ -56,6 +59,7 @@ main{
 
 nav{
     margin-top: 15px;
+    font-size: 14px;
 }
 nav li{
     margin-bottom: 12px;
@@ -104,7 +108,7 @@ nav a:hover{
 /* all_wine */
 
 .main_title{
-    font-size: 24px;
+    font-size: 19px;
     text-align: center;
 }
 
