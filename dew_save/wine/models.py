@@ -89,7 +89,7 @@ class Wine(models.Model):
     ]
 
     nose_data = [
-        ('lemmon', 'レモン'), ('kime', 'ライム'), ('grapefruit', 'グレープフルーツ'), ('apple', 'リンゴ'), ('green apple', '青りんご'),
+        ('lemmon', 'レモン'), ('lime', 'ライム'), ('grapefruit', 'グレープフルーツ'), ('apple', 'リンゴ'), ('green apple', '青りんご'),
         ('pear', '洋ナシ'), ('peach', '桃'), ('apricot', 'アプリコット'), ('pineapple', 'パイナップル'), ('passion fruit', 'パッションフルーツ'),
         ('banana', 'バナナ'), ('mango', 'マンゴー'), ('lychee', 'ライチ'), ('muscat', 'マスカット'), ('strawberry', 'イチゴ'), ('raspberry', 'ラズベリー'),
         ('blueberry', 'ブルーベリー'), ('cassis', 'カシス'), ('blackberry', 'ブラックベリー'), ('dry plum', '干しプラム'), ('dry fig', '乾燥イチジク'),
