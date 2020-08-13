@@ -32,8 +32,9 @@ class My_wine(LoginRequiredMixin,ListView):
     model = Wine
     template_name = 'wine/my_wine.html'
     paginate_by = 9
+
     def get_queryset(self):
-        return Wine.objects.filter(user=self.request.user)
+        return Wine.objects.filter(user=self.request.user).order_by('-id')
 
 class Add_wine(LoginRequiredMixin,CreateView):
     model = Wine
