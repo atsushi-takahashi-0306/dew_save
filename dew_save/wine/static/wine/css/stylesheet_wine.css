@@ -208,6 +208,12 @@ margin-left: 700px;
     color:red;
 }
 
+.account_table{
+    width:650px;
+}
+.account_table th{
+    width:165px;
+}
 
 
 
