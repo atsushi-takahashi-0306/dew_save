@@ -3,37 +3,36 @@
 {% block title %}new posts{% endblock %}
 
 {% block main%}
-    <p class="main_title">new posts</p>
 
-    <div class="grid">
-        {% for item in object_list %}
-                <div class="item">
-                    <a href="/detail_wine/{{item.id}}/" ><img src='{{item.pic.url}}'></a>
-                    <p class="item_date_time">{{item.date}}</p>
-                    <p class="item_user_name">{{item.user}}</p>
-                </div>
-        {% endfor %}
+<p class="main_title">new posts</p>
+
+<div class="grid">
+    {% for item in object_list %}
+    <div class="item">
+        <a href="/detail_wine/{{item.id}}/" ><img src='{{item.pic.url}}'></a>
+        <p class="item_date_time">{{item.date}}</p>
+        <p class="item_user_name">{{item.user}}</p>
     </div>
-        
+    {% endfor %}
+</div>
 
+<center>
+    {% if page_obj.has_previous %}
+        <a class="pagination" href="?page={{ page_obj.previous_page_number }}">前へ</a>
+    {% endif %}
 
-    <center>
-        {% if page_obj.has_previous %}
-            <a class="pagination" href="?page={{ page_obj.previous_page_number }}">前へ</a>
+    {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+            <span>{{ num }}</span>
+        {% else %}
+            <a class="pagination" href="?page={{ num }}">{{ num }}</a>
         {% endif %}
+    {% endfor %}
 
-        {% for num in page_obj.paginator.page_range %}
-            {% if page_obj.number == num %}
-                <span>{{ num }}</span>
-            {% else %}
-                <a class="pagination" href="?page={{ num }}">{{ num }}</a>
-            {% endif %}
-        {% endfor %}
-
-        {% if page_obj.has_next %}
-            <a class="pagination" href="?page={{ page_obj.next_page_number }}">次へ</a>
-        {% endif %}
-    </center>
+    {% if page_obj.has_next %}
+        <a class="pagination" href="?page={{ page_obj.next_page_number }}">次へ</a>
+    {% endif %}
+</center>
 
 {% endblock %}
   

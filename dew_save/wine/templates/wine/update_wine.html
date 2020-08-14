@@ -4,29 +4,25 @@
 
 {% block main%}
 
-    <p class="main_title">update wine</p>
+<p class="main_title">update wine</p>
 
-    <center>
-        <div class="detail_wrapper">
-            <img src="{{object.pic.url}}" width="317px">
+<center>
+    <div class="detail_wrapper">
+        <img src="{{object.pic.url}}" width="317px">
 
-            <form action="/update_wine/{{object.id}}/" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <table class="update_wine_table">
-                    {{form.as_table}}
-                </table>
-                <input class="update_button" type="submit" value="update">
-            </form>
-        </div>
-            <form action="/delete_wine/{{object.id}}/" method="post">
-                {% csrf_token %}
-                <input class="delete_button" type="submit" value="delete">
-            </form>
-    </center>
+        <form action="/update_wine/{{object.id}}/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table class="update_wine_table">
+                {{form.as_table}}
+            </table>
+            <input class="update_button" type="submit" value="update">
+        </form>
+    </div>
 
-    
-            <!-- <tr><th></th><td><a href="{% url 'wine:all' %}"><input  class="back" type="submit" value="back"></a></td></tr> -->
-         
-    
+    <form action="/delete_wine/{{object.id}}/" method="post">
+        {% csrf_token %}
+        <input class="delete_button" type="submit" value="delete">
+    </form>
+</center>
   
 {% endblock %}
