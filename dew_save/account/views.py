@@ -14,6 +14,10 @@ from django.contrib.auth.views import PasswordChangeView, PasswordChangeDoneView
 from django.views import generic
 
 
+
+
+
+
 class PasswordReset(PasswordResetView):
     """パスワード変更用URLの送付ページ"""
     subject_template_name = 'account/subject.txt'
