@@ -1,18 +1,14 @@
 {% extends 'wine/layout2.html' %}
 
-{% load static %}
-
 {% block title %}signup{% endblock %}
-
 
 {% block main%}
 
-    <p class="main_title">signup</p>
+<p class="main_title">signup</p>
 
 <form method="post" action="{% url 'account:signup' %}">
     {% csrf_token %}
     <table>
-
         {% if form.errors %}
             {% for field in form %}
                 {% for error in field.errors %}
@@ -39,8 +35,7 @@
         </tr>
     </table>
     
-    <input class="space2" type="submit" value="signup">
-    
-    
+    <input class="signup_bottom_space" type="submit" value="signup">
 </form>
+
 {% endblock %}
