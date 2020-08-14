@@ -1,14 +1,10 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 from django.core.validators import MaxLengthValidator
 from django.core.validators import MaxValueValidator
 from django.core.validators import MinValueValidator
 from django.core.validators import FileExtensionValidator
 from django.utils import timezone
-from django.contrib.auth import get_user_model
-
-
-
-# Create your models here.
 
 
 class Wine(models.Model):
@@ -37,6 +33,7 @@ class Wine(models.Model):
         ('etc.', 'etc.'),
     ]
     
+
     vintage_data = [
         ('1980', '1980'), ('1981', '1981'), ('1982', '1982'), ('1983', '1983'), ('1984', '1984'), ('1985', '1985'), 
         ('1986', '1986'), ('1987', '1987'), ('1988', '1988'), ('1989', '1989'), ('1990', '1990'), ('1991', '1991'), 
@@ -46,6 +43,7 @@ class Wine(models.Model):
         ('2010', '2010'), ('2011', '2011'), ('2012', '2012'), ('2013', '2013'), ('2014', '2014'), ('2015', '2015'),
         ('2016', '2016'), ('2017', '2017'), ('2018', '2018'), ('2019', '2019'), ('2020', '2020'), 
     ]
+
 
     grape_data = [
         ('Chardonnay', 'Chardonnay'),
@@ -74,6 +72,7 @@ class Wine(models.Model):
         ('etc.', 'etc.'),
     ]
 
+
     eye_data = [
         ('green', 'green'),
         ('lemon yellow', 'lemon yellow'),
@@ -88,6 +87,7 @@ class Wine(models.Model):
         ('mahogany', 'mahogany'),   
     ]
 
+
     nose_data = [
         ('lemmon', 'レモン'), ('lime', 'ライム'), ('grapefruit', 'グレープフルーツ'), ('apple', 'リンゴ'), ('green apple', '青りんご'),
         ('pear', '洋ナシ'), ('peach', '桃'), ('apricot', 'アプリコット'), ('pineapple', 'パイナップル'), ('passion fruit', 'パッションフルーツ'),
@@ -99,6 +99,7 @@ class Wine(models.Model):
         ('cinnamon', 'シナモン'), ('mineral', 'ミネラル'), ('soil', '土'), ('truffle', 'トリュフ'), ('cigarette', 'タバコ'), ('black pepper', '黒コショウ'),
         ('blood','血液'),
     ]
+
 
     mouth_data = [
         ('fresh', 'フレッシュ感のある'),
@@ -115,6 +116,7 @@ class Wine(models.Model):
         ('aging', '長期熟成型のような'),
     ]
 
+
     error_msg = [
         '50文字まででお願いします。',
         '10文字まででお願い致します。',
@@ -122,6 +124,7 @@ class Wine(models.Model):
         '点数は0点以上で採点お願い致します。',
         'ファイル形式はJPEG,PNG,GIFでお願い致します。'
     ]
+
 
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,default=1)
     date = models.DateTimeField(default=timezone.now)

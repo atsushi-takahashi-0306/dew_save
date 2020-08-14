@@ -6,10 +6,8 @@ from .views import All_wine
 from .views import Detail_wine
 from .views import Delete_wine
 from .views import Update_wine
-# imege file用↓
 from django.conf import settings
 from django.conf.urls.static import static
-
 
 
 app_name = 'wine'
