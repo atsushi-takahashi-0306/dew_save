@@ -1,6 +1,7 @@
 @charset "utf-8";
 
-/* common */
+/* 共通部分 */
+
 a{
     text-decoration: none;
     color: black;
@@ -13,7 +14,7 @@ table th{
     width: 100px;
 }
 
-/* レイアウト */
+/* 全体のレイアウト */
 
 body{
     max-width: 1115px;
@@ -80,7 +81,15 @@ nav a:hover{
     color: red;
 }
 
-/* home */
+/* footer */
+.copy_right{
+    font-size: 12px;
+    text-align: right;
+    margin-top: 15px;
+}
+
+/* home.html */
+
 .signup_link{
     font-size: 40px;
 }
@@ -92,6 +101,7 @@ nav a:hover{
 .signup_link:hover{
     color: red;
 }
+
 .login_link:hover{
     color: red;
 }
@@ -99,17 +109,20 @@ nav a:hover{
 .home_top_space{
     height: 20px;
 }
+
 .home_bottom_space{
     margin-top:330px;
 }
 
-/* signup */
+/* signup.html */
+
 .signup_bottom_space{
     margin-top: 10px;
     margin-bottom:197px;
 }
 
-/* login */
+/* login.html */
+
 .login_bottom_space{
     margin-bottom:229px;
 }
@@ -122,8 +135,17 @@ nav a:hover{
     color: red;
 }
 
+/* account.html */
 
-/* all_wine */
+.account_table{
+    width:650px;
+}
+
+.account_table th{
+    width:165px;
+}
+
+/* all_wine.html */
 
 .main_title{
     font-size: 19px;
@@ -168,11 +190,13 @@ center{
     margin-top: 25px;
     margin-bottom: 20px;
 }
+
 .pagination:hover{
     color: red;
 }
 
-/* detail_wine */ 
+/* detail_wine.html */ 
+
 .detail_wrapper{
     display: flex;
 }
@@ -186,13 +210,15 @@ center{
     margin-top: 10px;
 }
 
-/* my_wine */
+/* my_wine.html */
+
 .item_date_time2{
     margin-top: 3.5px;
     margin-bottom: 16px;
 }
 
-/* update_wine */
+/* update_wine.html */
+
 .update_wine_table{
     margin-top: 30px;
     margin-left: 46px;
@@ -204,28 +230,11 @@ center{
 }
 
 .delete_button{
-margin-left: 700px;
-
+margin-left: 700px
 }
 
-/* footer */
-.copy_right{
-    font-size: 12px;
-    text-align: right;
-    margin-top: 15px;
-}
+/* パスワードリセット共通 */
 
 .password_button:hover{
     color:red;
 }
-
-.account_table{
-    width:650px;
-}
-.account_table th{
-    width:165px;
-}
-
-
-
-
