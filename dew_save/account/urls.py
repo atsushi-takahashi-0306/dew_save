@@ -1,9 +1,10 @@
+from . import views
 from django.urls import path
-from .views import SignUp
 from django.contrib.auth import views as auth_views
+from .views import SignUp
 from .views import Delete_user
 from .views import Update_user
-from . import views
+
 
 app_name = 'account'
 
@@ -13,7 +14,6 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('delete_user/<int:pk>/', Delete_user.as_view(), name='delete'),
     path('update_user/<int:pk>/', Update_user.as_view(), name='update'),
-
     path('password_reset/', views.PasswordReset.as_view(), name='password_reset'), 
     path('password_reset/done/', views.PasswordResetDone.as_view(), name='password_reset_done'), 
     path('reset/<uidb64>/<token>/', views.PasswordResetConfirm.as_view(), name='password_reset_confirm'), 
