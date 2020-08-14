@@ -195,6 +195,10 @@ center{
     color: red;
 }
 
+.pagination_number{
+    font-size:24px
+}
+
 /* detail_wine.html */ 
 
 .detail_wrapper{
