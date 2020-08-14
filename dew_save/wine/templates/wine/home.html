@@ -4,10 +4,16 @@
 
 {% block main%}
     
-    <div class="home_space"></div>
-        <a class="signup_button" href="{% url 'account:signup' %}">signup  </a>
-        <a class="login_button" href="{% url 'account:login' %}">  login</a>
-        <div class="space"></div>
+    <div class="home_top_space">
+
+    </div>
+
+        <a class="signup_link" href="{% url 'account:signup' %}">signup  </a>
+        <a class="login_link" href="{% url 'account:login' %}">login</a>
+
+    <div class="home_bottom_space">
+
+    </div>
     
 {% endblock %} 
            
