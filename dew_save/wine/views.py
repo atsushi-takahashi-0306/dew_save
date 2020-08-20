@@ -42,7 +42,7 @@ class Add_wine(LoginRequiredMixin,CreateView):
     model = Wine
     form_class = WineForm
     template_name = 'wine/add_wine.html'
-    success_url = reverse_lazy('wine:add')
+    success_url = reverse_lazy('wine:my')
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(Add_wine, self).form_valid(form)
@@ -60,4 +60,4 @@ class Update_wine(LoginRequiredMixin,UpdateView):
 class Delete_wine(LoginRequiredMixin,DeleteView):
     model = Wine
     template_name = 'wine/update_wine.html'
-    success_url = reverse_lazy('wine:add')
+    success_url = reverse_lazy('wine:my')
