@@ -12,6 +12,8 @@ table{
 }
 table th{
     width: 100px;
+    font-weight: normal;
+    text-transform: lowercase;
 }
 
 /* 全体のレイアウト */
@@ -61,8 +63,9 @@ main{
 
 .user_name{
     color: red;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 20px;
+    margin-top:3px;
+    margin-bottom: 23px;
 }
 
 nav{
