@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+    django:
+        build: ./django
+        expose:
+            - "8000"
+        networks:
+            - nginx_network
+        volumes:
+            - ./django:/code
+        hostname: django-server
+        restart: always
+    nginx:
+        image: nginx
+        ports:
+            - "80:80"
+        networks:
+            - nginx_network
+        depends_on:
+            - django
+        volumes:
+            - ./nginx/project.conf:/etc/nginx/conf.d/default.conf
+            - ./django/dew_save/dew_save/static:/etc/nginx/conf.d/static
+        restart: always
+networks:
+    nginx_network:
+        driver: bridge
